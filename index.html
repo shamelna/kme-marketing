@@ -352,10 +352,15 @@
                 Investment: Secure Checkout Below
             </div>
             <p style="text-align: center; margin-bottom: 30px; color: #12385b; font-size: 1.1em;">
-                Complete your purchase using our secure Stripe payment system. Your enhanced post will be scheduled within 24 hours of payment confirmation.
+                Complete your purchase using our secure Stripe payment system. We will reach out within 2 working days to arrange your post.
             </p>
-            <div class="iframe-container">
-                <iframe src="https://buy.stripe.com/5kQ8wQd6nawQ32a27D1RC00"></iframe>
+            <div class="iframe-container" style="text-align: center; padding: 20px;">
+                <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+                <stripe-buy-button
+                  buy-button-id="buy_btn_1SFZVZK2smnQtgReFjj6qZVs"
+                  publishable-key="pk_live_51SFZIKK2smnQtgReVLjHoxrIch8IQZHpUusNIvsNJ2zMvFSqwtK73kZUFjhRw3Fx1R67vfudvi5j9KP6dIdQJ0WS00frK8CW7z"
+                >
+                </stripe-buy-button>
             </div>
         </div>
     </div>

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,348 +14,590 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #e9f0f8 0%, #ffffff 100%);
-            color: #12385b;
-            line-height: 1.6;
-        }
+```
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #e9f0f8 0%, #ffffff 100%);
+        color: #12385b;
+        line-height: 1.6;
+    }
 
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 20px;
+    }
 
-        header {
-            background: linear-gradient(135deg, #12385b 0%, #017bb5 100%);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
+    header {
+        background: linear-gradient(135deg, #12385b 0%, #017bb5 100%);
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
 
-        .logo {
-            max-width: 200px;
-            margin-bottom: 20px;
-        }
+    .logo {
+        max-width: 200px;
+        margin-bottom: 20px;
+    }
 
+    h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .subtitle {
+        font-size: 1.2em;
+        opacity: 0.95;
+        margin-bottom: 10px;
+    }
+
+    .badge {
+        display: inline-block;
+        background: #de1738;
+        color: white;
+        padding: 8px 20px;
+        border-radius: 25px;
+        font-weight: bold;
+        margin-top: 15px;
+        font-size: 0.9em;
+    }
+
+    .value-props {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 40px 0;
+    }
+
+    .value-prop {
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+
+    .value-prop h3 {
+        color: #017bb5;
+        margin-top: 10px;
+    }
+
+    .stats-banner {
+        background: linear-gradient(135deg, #12385b 0%, #017bb5 100%);
+        color: white;
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+        margin: 30px 0;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+
+    .stats-banner h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .stat-item {
+        padding: 15px;
+    }
+
+    .stat-number {
+        font-size: 2.5em;
+        font-weight: bold;
+        display: block;
+    }
+
+    .packages-section {
+        margin: 50px 0;
+    }
+
+    .section-title {
+        text-align: center;
+        font-size: 2.5em;
+        color: #12385b;
+        margin-bottom: 40px;
+    }
+
+    .packages-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .package-card {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        overflow: hidden;
+        position: relative;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .package-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+
+    .package-header {
+        padding: 30px;
+        text-align: center;
+        position: relative;
+    }
+
+    .package-card.basic .package-header {
+        background: linear-gradient(135deg, #017bb5 0%, #0396d4 100%);
+    }
+
+    .package-card.enhanced .package-header {
+        background: linear-gradient(135deg, #017bb5 0%, #0396d4 100%);
+    }
+
+    .package-card.premium .package-header {
+        background: linear-gradient(135deg, #12385b 0%, #1a5078 100%);
+    }
+
+    .package-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: #de1738;
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.8em;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .package-card.premium .package-badge {
+        background: #de1738;
+    }
+
+    .package-name {
+        color: white;
+        font-size: 1.8em;
+        margin-bottom: 10px;
+    }
+
+    .package-tagline {
+        color: rgba(255,255,255,0.9);
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+
+    .package-price {
+        background: white;
+        color: #12385b;
+        padding: 15px;
+        border-radius: 10px;
+        display: inline-block;
+    }
+
+    .price-amount {
+        font-size: 3em;
+        font-weight: bold;
+    }
+
+    .price-currency {
+        font-size: 1.2em;
+        vertical-align: super;
+    }
+
+    .price-period {
+        display: block;
+        font-size: 0.9em;
+        color: #666;
+    }
+
+    .package-body {
+        padding: 30px;
+    }
+
+    .features-list {
+        list-style: none;
+        margin: 20px 0;
+    }
+
+    .features-list li {
+        padding: 15px;
+        border-bottom: 1px solid #e9f0f8;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .features-list li:before {
+        content: "✓";
+        color: #28a745;
+        font-weight: bold;
+        font-size: 1.5em;
+        margin-right: 12px;
+        flex-shrink: 0;
+    }
+
+    .feature-title {
+        font-weight: bold;
+        color: #12385b;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .feature-desc {
+        color: #666;
+        font-size: 0.9em;
+    }
+
+    .cta-button {
+        width: 100%;
+        padding: 18px;
+        border: none;
+        border-radius: 10px;
+        font-size: 1.1em;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .package-card.basic .cta-button {
+        background: #017bb5;
+        color: white;
+    }
+
+    .package-card.enhanced .cta-button {
+        background: #017bb5;
+        color: white;
+    }
+
+    .package-card.premium .cta-button {
+        background: #12385b;
+        color: white;
+    }
+
+    .cta-button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .payment-container {
+        margin-top: 20px;
+        padding: 20px 20px 50px 20px;
+        background: #f8f9fa;
+        border-radius: 10px;
+    }
+
+    .terms-agreement {
+        margin: 20px 0;
+        padding: 15px;
+        background: white;
+        border-radius: 8px;
+        border: 1px solid #e9f0f8;
+    }
+
+    .terms-checkbox {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .terms-checkbox input[type="checkbox"] {
+        margin-top: 4px;
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+    }
+
+    .terms-checkbox label {
+        font-size: 0.9em;
+        color: #12385b;
+        line-height: 1.5;
+        cursor: pointer;
+    }
+
+    .terms-link {
+        color: #017bb5;
+        text-decoration: underline;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .terms-link:hover {
+        color: #de1738;
+    }
+
+    .buy-button-wrapper {
+        opacity: 0.5;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        position: relative;
+    }
+
+    .buy-button-wrapper::after {
+        content: "✓ Accept Terms & Conditions above to enable purchase";
+        position: absolute;
+        bottom: -35px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #de1738;
+        color: white;
+        padding: 8px 15px;
+        border-radius: 5px;
+        font-size: 0.85em;
+        white-space: nowrap;
+        opacity: 1;
+        pointer-events: none;
+    }
+
+    .buy-button-wrapper.enabled::after {
+        display: none;
+    }
+
+    .buy-button-wrapper.enabled {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* Modal Styles */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(18, 56, 91, 0.8);
+        animation: fadeIn 0.3s ease;
+    }
+
+    .modal.active {
+        display: block;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    .modal-content {
+        background-color: white;
+        margin: 3% auto;
+        padding: 0;
+        border-radius: 15px;
+        width: 90%;
+        max-width: 900px;
+        max-height: 85vh;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        animation: slideDown 0.3s ease;
+        display: flex;
+        flex-direction: column;
+    }
+
+    @keyframes slideDown {
+        from {
+            transform: translateY(-50px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .modal-header {
+        background: linear-gradient(135deg, #12385b 0%, #017bb5 100%);
+        color: white;
+        padding: 25px 30px;
+        border-radius: 15px 15px 0 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .modal-header h2 {
+        margin: 0;
+        font-size: 1.5em;
+    }
+
+    .close-button {
+        background: rgba(255,255,255,0.2);
+        color: white;
+        border: none;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 5px 15px;
+        border-radius: 5px;
+        transition: background 0.3s ease;
+    }
+
+    .close-button:hover {
+        background: rgba(222, 23, 56, 0.8);
+    }
+
+    .modal-body {
+        padding: 30px;
+        overflow-y: auto;
+        flex: 1;
+    }
+
+    .modal-body h3 {
+        color: #017bb5;
+        margin-top: 25px;
+        margin-bottom: 15px;
+        font-size: 1.3em;
+        border-bottom: 2px solid #e9f0f8;
+        padding-bottom: 10px;
+    }
+
+    .modal-body h4 {
+        color: #12385b;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 1.1em;
+    }
+
+    .modal-body p {
+        margin-bottom: 15px;
+        line-height: 1.6;
+    }
+
+    .modal-body ul {
+        margin: 10px 0 15px 20px;
+    }
+
+    .modal-body li {
+        margin-bottom: 8px;
+        line-height: 1.6;
+    }
+
+    .modal-footer {
+        background: #f8f9fa;
+        padding: 20px 30px;
+        border-radius: 0 0 15px 15px;
+        text-align: center;
+    }
+
+    .accept-button {
+        background: #28a745;
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 8px;
+        font-size: 1em;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .accept-button:hover {
+        background: #218838;
+        transform: scale(1.05);
+    }
+
+    footer {
+        text-align: center;
+        padding: 30px;
+        margin-top: 50px;
+        background: #12385b;
+        color: white;
+    }
+
+    .why-kme {
+        background: white;
+        padding: 40px;
+        border-radius: 15px;
+        margin: 40px 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .why-kme h2 {
+        color: #017bb5;
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 2em;
+    }
+
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .benefit-item {
+        padding: 20px;
+        background: #e9f0f8;
+        border-radius: 10px;
+        border-left: 4px solid #017bb5;
+    }
+
+    .benefit-item strong {
+        color: #12385b;
+        display: block;
+        margin-bottom: 10px;
+        font-size: 1.1em;
+    }
+
+    @media (max-width: 768px) {
         h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .subtitle {
-            font-size: 1.2em;
-            opacity: 0.95;
-            margin-bottom: 10px;
-        }
-
-        .badge {
-            display: inline-block;
-            background: #de1738;
-            color: white;
-            padding: 8px 20px;
-            border-radius: 25px;
-            font-weight: bold;
-            margin-top: 15px;
-            font-size: 0.9em;
-        }
-
-        .value-props {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 40px 0;
-        }
-
-        .value-prop {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-
-        .value-prop h3 {
-            color: #017bb5;
-            margin-top: 10px;
-        }
-
-        .stats-banner {
-            background: linear-gradient(135deg, #12385b 0%, #017bb5 100%);
-            color: white;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            margin: 30px 0;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-        }
-
-        .stats-banner h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .stat-item {
-            padding: 15px;
-        }
-
-        .stat-number {
-            font-size: 2.5em;
-            font-weight: bold;
-            display: block;
-        }
-
-        .packages-section {
-            margin: 50px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5em;
-            color: #12385b;
-            margin-bottom: 40px;
+            font-size: 1.8em;
         }
 
         .packages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: 1fr;
         }
 
-        .package-card {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-            overflow: hidden;
-            position: relative;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .package-card.featured {
+            transform: scale(1);
         }
 
-        .package-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-        }
-
-        .package-header {
-            padding: 30px;
-            text-align: center;
-            position: relative;
-        }
-
-        .package-card.basic .package-header {
-            background: linear-gradient(135deg, #017bb5 0%, #0396d4 100%);
-        }
-
-        .package-card.enhanced .package-header {
-            background: linear-gradient(135deg, #017bb5 0%, #0396d4 100%);
-        }
-
-        .package-card.premium .package-header {
-            background: linear-gradient(135deg, #12385b 0%, #1a5078 100%);
-        }
-
-        .package-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: #de1738;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        .package-card.premium .package-badge {
-            background: #de1738;
-        }
-
-        .package-name {
-            color: white;
-            font-size: 1.8em;
-            margin-bottom: 10px;
-        }
-
-        .package-tagline {
-            color: rgba(255,255,255,0.9);
-            font-size: 1em;
-            margin-bottom: 20px;
-        }
-
-        .package-price {
-            background: white;
-            color: #12385b;
-            padding: 15px;
-            border-radius: 10px;
-            display: inline-block;
-        }
-
-        .price-amount {
-            font-size: 3em;
-            font-weight: bold;
-        }
-
-        .price-currency {
-            font-size: 1.2em;
-            vertical-align: super;
-        }
-
-        .price-period {
-            display: block;
-            font-size: 0.9em;
-            color: #666;
-        }
-
-        .package-body {
-            padding: 30px;
-        }
-
-        .features-list {
-            list-style: none;
-            margin: 20px 0;
-        }
-
-        .features-list li {
-            padding: 15px;
-            border-bottom: 1px solid #e9f0f8;
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .features-list li:before {
-            content: "✓";
-            color: #28a745;
-            font-weight: bold;
-            font-size: 1.5em;
-            margin-right: 12px;
-            flex-shrink: 0;
-        }
-
-        .feature-title {
-            font-weight: bold;
-            color: #12385b;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .feature-desc {
-            color: #666;
-            font-size: 0.9em;
-        }
-
-        .cta-button {
-            width: 100%;
-            padding: 18px;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.1em;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .package-card.basic .cta-button {
-            background: #017bb5;
-            color: white;
-        }
-
-        .package-card.enhanced .cta-button {
-            background: #017bb5;
-            color: white;
-        }
-
-        .package-card.premium .cta-button {
-            background: #12385b;
-            color: white;
-        }
-
-        .cta-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-
-        .payment-container {
-            margin-top: 20px;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 10px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            margin-top: 50px;
-            background: #12385b;
-            color: white;
-        }
-
-        .why-kme {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            margin: 40px 0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        .why-kme h2 {
-            color: #017bb5;
-            text-align: center;
-            margin-bottom: 30px;
+        .section-title {
             font-size: 2em;
         }
 
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+        .modal-content {
+            width: 95%;
+            margin: 5% auto;
+            max-height: 90vh;
         }
 
-        .benefit-item {
-            padding: 20px;
-            background: #e9f0f8;
-            border-radius: 10px;
-            border-left: 4px solid #017bb5;
+        .modal-header {
+            padding: 20px 15px;
         }
 
-        .benefit-item strong {
-            color: #12385b;
-            display: block;
-            margin-bottom: 10px;
-            font-size: 1.1em;
+        .modal-header h2 {
+            font-size: 1.2em;
         }
 
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 1.8em;
-            }
-
-            .packages-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .package-card.featured {
-                transform: scale(1);
-            }
-
-            .section-title {
-                font-size: 2em;
-            }
+        .modal-body {
+            padding: 20px 15px;
         }
-    </style>
+
+        .modal-footer {
+            padding: 15px;
+        }
+
+        .buy-button-wrapper::after {
+            white-space: normal;
+            width: 90%;
+            text-align: center;
+            font-size: 0.8em;
+        }
+    }
+</style>
+```
+
 </head>
 <body>
     <header>
@@ -364,111 +607,123 @@
         <span class="badge">🎯 Limited Slots Available Each Week</span>
     </header>
 
-    <div class="container">
-        <div class="stats-banner">
-            <h2>Why Partner With Kaizen Made Easy?</h2>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <span class="stat-number">350K+</span>
-                    <span class="stat-label">Specialized Followers</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">5-15</span>
-                    <span class="stat-label">Registrations Per Campaign</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">B2B</span>
-                    <span class="stat-label">Quality Leads</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">ROI+</span>
-                    <span class="stat-label">Higher Conversion Rates</span>
-                </div>
+```
+<div class="container">
+    <div class="stats-banner">
+        <h2>Why Partner With Kaizen Made Easy?</h2>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-number">350K+</span>
+                <span class="stat-label">Specialized Followers</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">5-15</span>
+                <span class="stat-label">Registrations Per Campaign</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">B2B</span>
+                <span class="stat-label">Quality Leads</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">ROI+</span>
+                <span class="stat-label">Higher Conversion Rates</span>
             </div>
         </div>
+    </div>
 
-        <div class="why-kme">
-            <h2>𝗪𝗵𝘆 𝗖𝗵𝗼𝗼𝘀𝗲 𝗞𝗠𝗘'𝘀 𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺</h2>
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <strong>→ Specialized Audience</strong>
-                    Highly targeted Kaizen, Lean, Six Sigma, and continuous improvement professionals
-                </div>
-                <div class="benefit-item">
-                    <strong>→ Relevant Community</strong>
-                    Practitioners and managers actively seeking professional development and training
-                </div>
-                <div class="benefit-item">
-                    <strong>→ Professional Network</strong>
-                    Strong B2B reach connecting you with decision-makers and quality leads
-                </div>
-                <div class="benefit-item">
-                    <strong>→ Educational Focus</strong>
-                    Trust-building, credibility-first content that establishes your expertise
-                </div>
-                <div class="benefit-item">
-                    <strong>→ Higher Conversion</strong>
-                    Better ROI compared to broad marketing channels with generic audiences
-                </div>
-                <div class="benefit-item">
-                    <strong>→ Cost-Effective</strong>
-                    Pricing strategically aligned to B2B training ROI for maximum value
-                </div>
+    <div class="why-kme">
+        <h2>𝗪𝗵𝘆 𝗖𝗵𝗼𝗼𝘀𝗲 𝗞𝗠𝗘'𝘀 𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺</h2>
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <strong>→ Specialized Audience</strong>
+                Highly targeted Kaizen, Lean, Six Sigma, and continuous improvement professionals
+            </div>
+            <div class="benefit-item">
+                <strong>→ Relevant Community</strong>
+                Practitioners and managers actively seeking professional development and training
+            </div>
+            <div class="benefit-item">
+                <strong>→ Professional Network</strong>
+                Strong B2B reach connecting you with decision-makers and quality leads
+            </div>
+            <div class="benefit-item">
+                <strong>→ Educational Focus</strong>
+                Trust-building, credibility-first content that establishes your expertise
+            </div>
+            <div class="benefit-item">
+                <strong>→ Higher Conversion</strong>
+                Better ROI compared to broad marketing channels with generic audiences
+            </div>
+            <div class="benefit-item">
+                <strong>→ Cost-Effective</strong>
+                Pricing strategically aligned to B2B training ROI for maximum value
             </div>
         </div>
+    </div>
 
-        <section class="packages-section">
-            <h2 class="section-title">Choose Your Promotion Package</h2>
-            
-            <div class="packages-grid">
-                <!-- Package 1: Basic Post -->
-                <div class="package-card basic">
-                    <div class="package-header">
-                        <h3 class="package-name">Package 1<br>Basic Post</h3>
-                        <p class="package-tagline">First-time promotions and quick awareness</p>
-                        <div class="package-price">
-                            <span class="price-currency">USD</span>
-                            <span class="price-amount">$74</span>
-                            <span class="price-period">per post</span>
-                        </div>
+    <section class="packages-section">
+        <h2 class="section-title">Choose Your Promotion Package</h2>
+        
+        <div class="packages-grid">
+            <!-- Package 1: Basic Post -->
+            <div class="package-card basic">
+                <div class="package-header">
+                    <h3 class="package-name">Package 1<br>Basic Post</h3>
+                    <p class="package-tagline">First-time promotions and quick awareness</p>
+                    <div class="package-price">
+                        <span class="price-currency">USD</span>
+                        <span class="price-amount">$74</span>
+                        <span class="price-period">per post</span>
                     </div>
-                    <div class="package-body">
-                        <ul class="features-list">
-                            <li>
-                                <div>
-                                    <span class="feature-title">Single LinkedIn Post</span>
-                                    <span class="feature-desc">Professional visibility on our page</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <span class="feature-title">Professional Content Writing</span>
-                                    <span class="feature-desc">Engaging copy that converts</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <span class="feature-title">Course Details Formatting</span>
-                                    <span class="feature-desc">Clear presentation of key information</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <span class="feature-title">Posted on Page</span>
-                                    <span class="feature-desc">Shared with our specialized audience</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <span class="feature-title">Basic Engagement Monitoring</span>
-                                    <span class="feature-desc">Track likes, comments and shares</span>
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="payment-container">
-                            <p style="text-align: center; color: #12385b; margin-bottom: 15px; font-size: 0.95em;">
-                                Complete your purchase below. We will reach out within 2 working days to arrange your post.
-                            </p>
+                </div>
+                <div class="package-body">
+                    <ul class="features-list">
+                        <li>
+                            <div>
+                                <span class="feature-title">Single LinkedIn Post</span>
+                                <span class="feature-desc">Professional visibility on our page</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <span class="feature-title">Professional Content Writing</span>
+                                <span class="feature-desc">Engaging copy that converts</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <span class="feature-title">Course Details Formatting</span>
+                                <span class="feature-desc">Clear presentation of key information</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <span class="feature-title">Posted on Page</span>
+                                <span class="feature-desc">Shared with our specialized audience</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <span class="feature-title">Basic Engagement Monitoring</span>
+                                <span class="feature-desc">Track likes, comments and shares</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="payment-container">
+                        <p style="text-align: center; color: #12385b; margin-bottom: 15px; font-size: 0.95em;">
+                            Complete your purchase below. We will reach out within 2 working days to arrange your post.
+                        </p>
+                        
+                        <div class="terms-agreement">
+                            <div class="terms-checkbox">
+                                <input type="checkbox" id="terms-basic" onchange="toggleBuyButton(this)">
+                                <label for="terms-basic">
+                                    I agree to the <span class="terms-link" onclick="openTermsModal()">Terms and Conditions</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="buy-button-wrapper" id="buy-button-basic">
                             <script async src="https://js.stripe.com/v3/buy-button.js"></script>
                             <stripe-buy-button
                               buy-button-id="buy_btn_1SNQIHK2smnQtgReoD3LlEs9"
@@ -478,61 +733,73 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Package 2: Enhanced Post -->
-                <div class="package-card enhanced">
-                    <div class="package-header">
-                        <h3 class="package-name">Package 2<br>Enhanced Post</h3>
-                        <p class="package-tagline">Stronger visibility and conversions</p>
-                        <div class="package-price">
-                            <span class="price-currency">USD</span>
-                            <span class="price-amount">$98</span>
-                            <span class="price-period">per post</span>
-                        </div>
+            <!-- Package 2: Enhanced Post -->
+            <div class="package-card enhanced">
+                <div class="package-header">
+                    <h3 class="package-name">Package 2<br>Enhanced Post</h3>
+                    <p class="package-tagline">Stronger visibility and conversions</p>
+                    <div class="package-price">
+                        <span class="price-currency">USD</span>
+                        <span class="price-amount">$98</span>
+                        <span class="price-period">per post</span>
                     </div>
-                    <div class="package-body">
-                        <ul class="features-list">
-                            <li>
-                                <div>
-                                    <span class="feature-title">Single Post with Enhanced Design</span>
-                                    <span class="feature-desc">Visually appealing presentation</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <span class="feature-title">Custom Graphics</span>
-                                    <span class="feature-desc">Unique visuals tailored to your course</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <span class="feature-title">Strong Call-to-Action (CTA)</span>
-                                    <span class="feature-desc">Compelling messaging that drives action</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <span class="feature-title">Registration Link Included</span>
-                                    <span class="feature-desc">Direct path to sign-up and conversion</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <span class="feature-title">48-Hour Engagement Monitoring</span>
-                                    <span class="feature-desc">Extended performance tracking</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <span class="feature-title">Boosted Reach</span>
-                                    <span class="feature-desc">Enhanced visibility within our network</span>
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="payment-container">
-                            <p style="text-align: center; color: #12385b; margin-bottom: 15px; font-size: 0.95em;">
-                                Complete your purchase below. We will reach out within 2 working days to arrange your post.
-                            </p>
+                </div>
+                <div class="package-body">
+                    <ul class="features-list">
+                        <li>
+                            <div>
+                                <span class="feature-title">Single Post with Enhanced Design</span>
+                                <span class="feature-desc">Visually appealing presentation</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <span class="feature-title">Custom Graphics</span>
+                                <span class="feature-desc">Unique visuals tailored to your course</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <span class="feature-title">Strong Call-to-Action (CTA)</span>
+                                <span class="feature-desc">Compelling messaging that drives action</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <span class="feature-title">Registration Link Included</span>
+                                <span class="feature-desc">Direct path to sign-up and conversion</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <span class="feature-title">48-Hour Engagement Monitoring</span>
+                                <span class="feature-desc">Extended performance tracking</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <span class="feature-title">Boosted Reach</span>
+                                <span class="feature-desc">Enhanced visibility within our network</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="payment-container">
+                        <p style="text-align: center; color: #12385b; margin-bottom: 15px; font-size: 0.95em;">
+                            Complete your purchase below. We will reach out within 2 working days to arrange your post.
+                        </p>
+                        
+                        <div class="terms-agreement">
+                            <div class="terms-checkbox">
+                                <input type="checkbox" id="terms-enhanced" onchange="toggleBuyButton(this)">
+                                <label for="terms-enhanced">
+                                    I agree to the <span class="terms-link" onclick="openTermsModal()">Terms and Conditions</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="buy-button-wrapper" id="buy-button-enhanced">
                             <script async src="https://js.stripe.com/v3/buy-button.js"></script>
                             <stripe-buy-button
                               buy-button-id="buy_btn_1SFZVZK2smnQtgReFjj6qZVs"
@@ -542,61 +809,73 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Package 3: Premium Promotion -->
-                <div class="package-card premium">
-                    <div class="package-header">
-                        <h3 class="package-name">Package 3<br>Premium Promotion</h3>
-                        <p class="package-tagline">Maximum depth and credibility</p>
-                        <div class="package-price">
-                            <span class="price-currency">USD</span>
-                            <span class="price-amount">$134</span>
-                            <span class="price-period">per package</span>
-                        </div>
+            <!-- Package 3: Premium Promotion -->
+            <div class="package-card premium">
+                <div class="package-header">
+                    <h3 class="package-name">Package 3<br>Premium Promotion</h3>
+                    <p class="package-tagline">Maximum depth and credibility</p>
+                    <div class="package-price">
+                        <span class="price-currency">USD</span>
+                        <span class="price-amount">$134</span>
+                        <span class="price-period">per package</span>
                     </div>
-                    <div class="package-body">
-                        <ul class="features-list">
-                            <li>
-                                <div>
-                                    <span class="feature-title">LinkedIn Post + Article</span>
-                                    <span class="feature-desc">Dual content for maximum visibility</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <span class="feature-title">Spotlight Article (500+ words)</span>
-                                    <span class="feature-desc">In-depth content establishing expertise</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <span class="feature-title">Custom Graphics & Design</span>
-                                    <span class="feature-desc">Professional visuals that stand out</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <span class="feature-title">7-Day Engagement Monitoring</span>
-                                    <span class="feature-desc">Extended reach and ongoing optimization</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <span class="feature-title">Cross-Promotion Strategy</span>
-                                    <span class="feature-desc">Extended visibility across platforms</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <span class="feature-title">Detailed Analytics Report</span>
-                                    <span class="feature-desc">Comprehensive performance metrics</span>
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="payment-container">
-                            <p style="text-align: center; color: #12385b; margin-bottom: 15px; font-size: 0.95em;">
-                                Complete your purchase below. We will reach out within 2 working days to arrange your post.
-                            </p>
+                </div>
+                <div class="package-body">
+                    <ul class="features-list">
+                        <li>
+                            <div>
+                                <span class="feature-title">LinkedIn Post + Article</span>
+                                <span class="feature-desc">Dual content for maximum visibility</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <span class="feature-title">Spotlight Article (500+ words)</span>
+                                <span class="feature-desc">In-depth content establishing expertise</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <span class="feature-title">Custom Graphics & Design</span>
+                                <span class="feature-desc">Professional visuals that stand out</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <span class="feature-title">7-Day Engagement Monitoring</span>
+                                <span class="feature-desc">Extended reach and ongoing optimization</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <span class="feature-title">Cross-Promotion Strategy</span>
+                                <span class="feature-desc">Extended visibility across platforms</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <span class="feature-title">Detailed Analytics Report</span>
+                                <span class="feature-desc">Comprehensive performance metrics</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="payment-container">
+                        <p style="text-align: center; color: #12385b; margin-bottom: 15px; font-size: 0.95em;">
+                            Complete your purchase below. We will reach out within 2 working days to arrange your post.
+                        </p>
+                        
+                        <div class="terms-agreement">
+                            <div class="terms-checkbox">
+                                <input type="checkbox" id="terms-premium" onchange="toggleBuyButton(this)">
+                                <label for="terms-premium">
+                                    I agree to the <span class="terms-link" onclick="openTermsModal()">Terms and Conditions</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="buy-button-wrapper" id="buy-button-premium">
                             <script async src="https://js.stripe.com/v3/buy-button.js"></script>
                             <stripe-buy-button
                               buy-button-id="buy_btn_1SNQGaK2smnQtgRecI9LHQQW"
@@ -607,17 +886,213 @@
                     </div>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
+</div>
 
-    <footer>
-        <img src="https://marketing.kaizenmadeeasy.com/assets/images/Logo%20new%202024%20v2%20-%20White.png" alt="Kaizen Made Easy Logo" style="max-width: 150px; margin-bottom: 15px;">
-        <p>&copy; 2024 Kaizen Made Easy. All rights reserved.</p>
-        <p style="margin-top: 10px; opacity: 0.9;">Empowering continuous improvement worldwide</p>
-        <p style="margin-top: 15px;">
-            <a href="https://store.kaizenmadeeasy.com/collections/all" style="color: #e9f0f8; text-decoration: none;">🛍️ Visit KME Store</a>
-        </p>
-        <p style="margin-top: 10px; font-size: 0.9em;">#KME #ContinuousImprovement #LeanThinking #SixSigma</p>
-    </footer>
+<footer>
+    <img src="https://marketing.kaizenmadeeasy.com/assets/images/Logo%20new%202024%20v2%20-%20White.png" alt="Kaizen Made Easy Logo" style="max-width: 150px; margin-bottom: 15px;">
+    <p>&copy; 2024 Kaizen Made Easy. All rights reserved.</p>
+    <p style="margin-top: 10px; opacity: 0.9;">Empowering continuous improvement worldwide</p>
+    <p style="margin-top: 15px;">
+        <a href="https://store.kaizenmadeeasy.com/collections/all" style="color: #e9f0f8; text-decoration: none;">🛍️ Visit KME Store</a>
+    </p>
+    <p style="margin-top: 10px; font-size: 0.9em;">#KME #ContinuousImprovement #LeanThinking #SixSigma</p>
+</footer>
+
+<!-- Terms & Conditions Modal -->
+<div id="termsModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Terms and Conditions</h2>
+            <button class="close-button" onclick="closeTermsModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p><strong>Kaizen Made Easy™ LinkedIn Promotion Services</strong></p>
+            
+            <h3>I. Financial Terms and Compensation Model</h3>
+            
+            <h4>Fee Coverage</h4>
+            <p>The fixed fee structure covers:</p>
+            <ul>
+                <li>Placement and management of the campaign</li>
+                <li>Professional content writing and design</li>
+                <li>Engagement monitoring per package specifications</li>
+                <li>Performance analytics and reporting</li>
+                <li>Strategic consultation within the scope of the selected package</li>
+            </ul>
+            <p>Sales achieved by the Client are independent of this fee structure.</p>
+
+            <h4>Available Packages</h4>
+            <p><strong>Package 1 - Basic Post:</strong> $74 USD per post</p>
+            <p><strong>Package 2 - Enhanced Post:</strong> $98 USD per post</p>
+            <p><strong>Package 3 - Premium Promotion:</strong> $134 USD per package</p>
+
+            <h4>Payment Terms</h4>
+            <ul>
+                <li>Fixed fees are due at the beginning of the service period</li>
+                <li>Payment must be completed before campaign scheduling begins</li>
+                <li>All payments are processed securely through Stripe</li>
+                <li>Fees are non-refundable once the campaign has been scheduled or published</li>
+            </ul>
+
+            <h4>Currency</h4>
+            <p>All fees are quoted and charged in United States Dollars (USD).</p>
+
+            <h3>II. Content Submission and Approval</h3>
+            <p>Strict timelines for content submission and limits on revisions are necessary to maintain professional standards and prevent operational disruption.</p>
+
+            <h4>Content Lead Time</h4>
+            <p>The Client must submit all content required for the campaign <strong>at least ten (10) business days</strong> prior to the intended publication date. Required materials include:</p>
+            <ul>
+                <li>Course/service title and description</li>
+                <li>Target audience information</li>
+                <li>Key benefits and features</li>
+                <li>Registration or landing page links</li>
+                <li>Any specific branding assets or logos</li>
+                <li>Preferred publication dates</li>
+            </ul>
+
+            <h4>Approval Process</h4>
+            <p>The Client will have a defined window of <strong>48 hours</strong> to review and approve the finalized design and copy prepared by Kaizen Made Easy.</p>
+
+            <h4>Revision Limits</h4>
+            <p>Once content is approved and scheduled, subsequent revisions are subject to the following limitations:</p>
+            <ul>
+                <li><strong>Minor text edits:</strong> Up to 2 revisions allowed at no additional charge</li>
+                <li><strong>Design changes:</strong> 1 revision allowed at no additional charge</li>
+                <li><strong>Major content overhauls:</strong> Subject to additional fees and rescheduling</li>
+                <li><strong>Post-publication changes:</strong> Not permitted</li>
+            </ul>
+
+            <h4>Client Adherence</h4>
+            <p>The Client must adhere to the agreed-upon deadlines for material submission and approvals. Failure to meet submission deadlines may result in postponement of the campaign to the next available slot.</p>
+
+            <h3>III. Scheduling and Execution Timelines</h3>
+            
+            <h4>Post Frequency and Timing</h4>
+            <p>To ensure optimal post performance and reach, Kaizen Made Easy maintains specific scheduling protocols:</p>
+            <ul>
+                <li><strong>Minimum gap between promotional posts:</strong> Approximately twelve (12) hours between consecutive posts published on the same day</li>
+                <li><strong>Reason:</strong> Posts published too close together can negatively affect performance and reach</li>
+                <li><strong>Weekly capacity:</strong> Limited slots available each week to maintain content quality and audience engagement</li>
+            </ul>
+
+            <h4>Campaign Timeline</h4>
+            <p>Clients will be contacted within <strong>two (2) business days</strong> of payment confirmation to arrange post scheduling and finalize campaign details.</p>
+
+            <h3>IV. Communication and Reporting</h3>
+            
+            <h4>Service Level Agreement (SLA)</h4>
+            <ul>
+                <li><strong>Response time:</strong> Within 48 business hours for all inquiries</li>
+                <li><strong>Weekend/Holiday responses:</strong> May experience delays; non-urgent matters will be addressed on the next business day</li>
+                <li><strong>Emergency contact:</strong> Available only for critical technical issues affecting live campaigns</li>
+            </ul>
+
+            <h4>Expected Results</h4>
+            <p>While Kaizen Made Easy cannot guarantee specific registration numbers, typical outcomes include targeted registrations per campaign depending on offer fit and timing. Results vary based on product/service pricing, audience fit, market timing, and the Client's offer quality.</p>
+
+            <h3>V. Client Responsibilities</h3>
+            
+            <h4>Content Accuracy</h4>
+            <p>The Client is solely responsible for:</p>
+            <ul>
+                <li>Accuracy of all information provided</li>
+                <li>Compliance with advertising regulations in their jurisdiction</li>
+                <li>Validity of registration links and landing pages</li>
+                <li>Customer service and fulfillment of promoted offerings</li>
+                <li>Honoring any promotional pricing or offers advertised</li>
+            </ul>
+
+            <h4>Professional Conduct</h4>
+            <p>Clients are expected to maintain professional communication standards. Aggressive, disrespectful, or unreasonable communication may result in termination of the agreement with no refund.</p>
+
+            <h3>VI. Intellectual Property Rights</h3>
+            <p>The Client retains full ownership of all submitted materials, content, and branding assets. Kaizen Made Easy retains ownership of developed promotional strategies, marketing processes, and the Kaizen Made Easy™ brand.</p>
+
+            <h3>VII. Limitation of Liability</h3>
+            <p>Kaizen Made Easy provides professional promotion services but cannot guarantee specific numbers of registrations, engagement rates, or ROI outcomes. Maximum liability shall not exceed the amount of fees paid by the Client for the specific campaign in question.</p>
+
+            <h3>VIII. Termination and Cancellation</h3>
+            
+            <h4>Cancellation Policy</h4>
+            <ul>
+                <li><strong>Before content approval:</strong> Full refund minus 15% administrative fee</li>
+                <li><strong>After content approval but before publication:</strong> 50% refund</li>
+                <li><strong>After publication:</strong> No refund</li>
+            </ul>
+
+            <h3>IX. Contact Information</h3>
+            <p><strong>Kaizen Made Easy™</strong></p>
+            <p>Contact email: info@kaizenmadeeasy.com</p>
+            <p>LinkedIn page: <a href="https://www.linkedin.com/company/kaizen-made-easy/" target="_blank">https://www.linkedin.com/company/kaizen-made-easy/</a></p>
+
+            <h3>Acceptance</h3>
+            <p>By purchasing any promotional package or service from Kaizen Made Easy, the Client acknowledges that they have read, understood, and agree to be bound by these Terms and Conditions.</p>
+
+            <p style="margin-top: 30px; font-style: italic; color: #666;"><strong>Document Version 1.0 | December 2024</strong></p>
+        </div>
+        <div class="modal-footer">
+            <button class="accept-button" onclick="acceptTerms()">I Accept These Terms</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Terms Modal Functions
+    function openTermsModal() {
+        document.getElementById('termsModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeTermsModal() {
+        document.getElementById('termsModal').classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+
+    function acceptTerms() {
+        // Get the current package checkbox that was clicked
+        const currentCheckbox = document.querySelector('.terms-checkbox input[type="checkbox"]:focus');
+        if (currentCheckbox) {
+            currentCheckbox.checked = true;
+            enableBuyButton(currentCheckbox);
+        }
+        closeTermsModal();
+    }
+
+    // Enable/Disable buy button based on checkbox
+    function toggleBuyButton(checkbox) {
+        const paymentContainer = checkbox.closest('.payment-container');
+        const buyButtonWrapper = paymentContainer.querySelector('.buy-button-wrapper');
+        
+        if (checkbox.checked) {
+            buyButtonWrapper.classList.add('enabled');
+        } else {
+            buyButtonWrapper.classList.remove('enabled');
+        }
+    }
+
+    function enableBuyButton(checkbox) {
+        toggleBuyButton(checkbox);
+    }
+
+    // Close modal when clicking outside of it
+    window.onclick = function(event) {
+        const modal = document.getElementById('termsModal');
+        if (event.target == modal) {
+            closeTermsModal();
+        }
+    }
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeTermsModal();
+        }
+    });
+</script>
+```
+
 </body>
 </html>
